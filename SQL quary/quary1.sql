@@ -23,8 +23,16 @@ select * from employee
 order by emp_id;
 select * from employee limit 1;--show 1st one
 select * from employee
+order by emp_sal desc;
+select * from employee
 order by emp_id desc limit 1; --show last one
 select * from employee
-order by emp_sal desc limit 1;--show highest salary
+order by emp_sal desc as r from emp 
+	where r=4;--show highest salary
 update employee set emp_email='nathiyasathish876@gmail.com'
 	where emp_id=6;
+select * from (select * from Employee 
+       ORDER BY emp_sal DESC limit 5)
+       ORDER BY emp_sal limit 1;
+select * from employee where emp_design='manager'
+	order by emp_age;
